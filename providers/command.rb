@@ -24,7 +24,7 @@ def whyrun_supported?
 end
 
 action :run do
-  new_resource.path = "#{node['fuse']['home']}/bin" if new_resource.path.nil?
+  new_resource.bin_path = "#{node['fuse']['home']}/bin" if new_resource.bin_path.nil?
   new_resource.user_os = node['fuse']['os']['user'] if new_resource.user_os.nil?
 
   execute new_resource.name do
