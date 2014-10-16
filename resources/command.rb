@@ -8,5 +8,5 @@ attribute :task, :kind_of => String
 attribute :user, :kind_of => String
 attribute :password, :kind_of => String
 attribute :parameters, :kind_of => String
-attribute :user_os, :kind_of => String, :default => nil
-attribute :bin_path, :kind_of => String, :default => nil
+attribute :user_os, :kind_of => String, :default => node['fuse']['os']['user']
+attribute :bin_path, :kind_of => String, :default => "#{node['fuse']['home']}/bin"

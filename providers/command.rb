@@ -24,8 +24,6 @@ def whyrun_supported?
 end
 
 action :run do
-  new_resource.bin_path = "#{node['fuse']['home']}/bin" if new_resource.bin_path.nil?
-  new_resource.user_os = node['fuse']['os']['user'] if new_resource.user_os.nil?
 
   execute new_resource.name do
     command "#{new_resource.bin_path}/client -u #{new_resource.user} -p #{new_resource.password} #{new_resource.command}:#{new_resource.task}  #{new_resource.parameters}"
