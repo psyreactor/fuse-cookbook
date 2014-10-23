@@ -27,6 +27,7 @@ action :run do
 
   execute new_resource.name do
     command "#{new_resource.bin_path}/client -u #{new_resource.user} -p #{new_resource.password} #{new_resource.command}:#{new_resource.task}  #{new_resource.parameters}"
+    sensitive true
     user new_resource.user_os
     action :run
   end
